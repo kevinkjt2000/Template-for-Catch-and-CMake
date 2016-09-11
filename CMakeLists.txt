@@ -21,4 +21,6 @@ add_dependencies(Catch Catch-External)
 target_include_directories(Catch INTERFACE ${Catch_PREFIX}/include)
 
 enable_testing()
-add_test(NAME MyAwesomeTest COMMAND my_test)
+add_executable(my_awesome_test my_awesome_test.cpp)
+target_link_libraries(my_awesome_test Catch)
+add_test(NAME MyAwesomeTest COMMAND my_awesome_test)
