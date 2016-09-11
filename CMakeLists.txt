@@ -9,6 +9,7 @@ ExternalProject_Add(Catch-External
   PREFIX ${Catch_PREFIX}
   GIT_REPOSITORY "https://github.com/philsquared/Catch.git"
   GIT_TAG "35f510545d55a831372d3113747bf1314ff4f2ef"
+  UPDATE_COMMAND ""
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
   INSTALL_COMMAND ${CMAKE_COMMAND} -E copy
