@@ -12,14 +12,14 @@ ExternalProject_Add(Catch-External
   UPDATE_COMMAND ""
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
-  INSTALL_COMMAND ${CMAKE_COMMAND} -E copy
-    ${Catch_PREFIX}/src/Catch-External/single_include/catch.hpp
-    ${Catch_PREFIX}/include/catch.hpp
+  INSTALL_COMMAND ""
 )
 
 add_library(Catch INTERFACE)
 add_dependencies(Catch Catch-External)
-target_include_directories(Catch INTERFACE ${Catch_PREFIX}/include)
+target_include_directories(Catch INTERFACE
+  ${Catch_PREFIX}/src/Catch-External/single_include
+)
 
 enable_testing()
 add_executable(test_driver
